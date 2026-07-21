@@ -87,7 +87,7 @@ variable "sg_tag"
 {
   description="Security Group Name"
   type=string
-  deafult=st
+  default=st
 }
 
 variable "region" {
