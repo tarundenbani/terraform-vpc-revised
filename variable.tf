@@ -50,12 +50,12 @@ variable "public_subnet_2_tag" {
 variable "public_subnet_cidr_1" {
   description = "Cidr Blocks"
   type        = string
-  default     = "192.168.2.0/24"
+  default     = "192.168.1.0/24"
 }
 variable "public_subnet_cidr_2" {
   description = "Cidr Blocks"
   type        = string
-  default     = "192.168.3.0/24"
+  default     = "192.168.2.0/24"
 }
 variable "database_subnet_1_tag" {
   description = "Tag for Private Subnet"
@@ -75,12 +75,12 @@ variable "map_public_ip_on_launch" {
 variable "database_subnet_cidr_1" {
   description = "mention the CIDR block for database subnet"
   type = string
-  default = "192.168.4.0/24"
+  default = "192.168.3.0/24"
 }
 variable "database_subnet_cidr_2" {
   description = "mention the CIDR block for database subnet"
   type = string
-  default = "192.168.5.0/24"
+  default = "192.168.4.0/24"
 }
 
 variable "sg_tag"
