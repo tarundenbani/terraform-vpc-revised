@@ -16,7 +16,7 @@ variable "database_route_table_tag" {
 variable "cidr_block" {
   description = "Enter the CIDR range required for VPC"
   type        = string
-  default     = "192.168.1.0/16"
+  default     = "192.168.0.0/16"
 }
 variable "enable_dns_hostnames" {
   description = "Enable DNS Hostname"
