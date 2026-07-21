@@ -131,7 +131,7 @@ resource "aws_security_group" "sg" {
   description = "Allow all inbound traffic"
   vpc_id      = aws_vpc.myVPC.id
 
-  ingress = [
+  ingress
     {
       description      = "All traffic"
       from_port        = 0    # All ports
@@ -143,9 +143,9 @@ resource "aws_security_group" "sg" {
       security_groups  = null
       self             = null
     }
-  ]
 
-  egress = [
+
+  egress
     {
       from_port        = 0
       to_port          = 0
@@ -157,7 +157,7 @@ resource "aws_security_group" "sg" {
       security_groups  = null
       self             = null
     }
-  ]
+  
 
   tags = {
     Name = var.sg_tag
