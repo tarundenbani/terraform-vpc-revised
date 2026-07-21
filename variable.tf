@@ -24,7 +24,7 @@ variable "database_route_table_tag" {
   type        = string
   default     = "tcw_database_route_table"
 }
-variable "cidr" {
+variable "cidr_block" {
   description = "Enter the CIDR range required for VPC"
   type        = string
   default     = "192.168.0.0/16"
@@ -46,10 +46,10 @@ variable "enable_ipv6" {
   default     = null
 }
 
-variable "vpc_name" {
+variable "myVpc_tag" {
   description = "Tag Name to be assigned with VPC"
   type        = string
-  default     = "tcw_vpc"
+  default     = "mt"
 }
 
 variable "default_security_group_name" {
@@ -69,15 +69,15 @@ variable "manage_default_route_table" {
   type        = bool
   default     = null
 }
-variable "public_subnet_tag_1" {
+variable "public_subnet_1_tag" {
   description = "Tag for public subnet"
   type        = string
-  default     = "tcw_public_subnet_az_1a"
+  default     = "ps1t"
 }
-variable "public_subnet_tag_2" {
+variable "public_subnet_2_tag" {
   description = "Tag for public subnet"
   type        = string
-  default     = "tcw_public_subnet_az_1b"
+  default     = "ps2t"
 }
 variable "database_subnets" {
   description = "CIDR block for database subnet"
@@ -91,37 +91,37 @@ variable "public_subnet" {
   default     = null
 }
 
-variable "public_subnets_cidr_1" {
+variable "public_subnet_cidr_1" {
   description = "Cidr Blocks"
   type        = string
   default     = "192.168.1.0/24"
 }
-variable "public_subnets_cidr_2" {
+variable "public_subnet_cidr_2" {
   description = "Cidr Blocks"
   type        = string
   default     = "192.168.2.0/24"
 }
-variable "database_subnet_tag_1" {
+variable "database_subnet_1_tag" {
   description = "Tag for Private Subnet"
   type        = string
-  default     = "tcw_database_subnet_az_1a"
+  default     = "ds1t"
 }
-variable "database_subnet_tag_2" {
+variable "database_subnet_2_tag" {
   description = "Tag for Private Subnet"
   type        = string
-  default     = "tcw_database_subnet_az_1b"
+  default     = "ds2t"
 }
 variable "map_public_ip_on_launch" {
   description = "It will map the public ip while launching resources"
   type        = bool
   default     = null
 }
-variable "database_subnets_cidr_1" {
+variable "database_subnet_cidr_1" {
   description = "mention the CIDR block for database subnet"
   type = string
   default = "192.168.5.0/24"
 }
-variable "database_subnets_cidr_2" {
+variable "database_subnet_cidr_2" {
   description = "mention the CIDR block for database subnet"
   type = string
   default = "192.168.6.0/24"
