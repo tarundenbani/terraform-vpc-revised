@@ -83,6 +83,13 @@ variable "database_subnet_cidr_2" {
   default = "192.168.6.0/24"
 }
 
+variable "sg_tag"
+{
+  description="Security Group Name"
+  type=string
+  deafult=st
+}
+
 variable "region" {
 description = "AWS Region"
 type = string
