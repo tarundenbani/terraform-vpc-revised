@@ -160,6 +160,6 @@ resource "aws_security_group" "sg" {
   ]
 
   tags = {
-    Name = "tcw_security_group"
+    Name = var.sg_tag
   }
 }
