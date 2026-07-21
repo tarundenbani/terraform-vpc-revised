@@ -82,3 +82,10 @@ variable "database_subnet_cidr_2" {
   type = string
   default = "192.168.6.0/24"
 }
+
+variable "region" {
+description = "AWS Region"
+type = string
+default = "us-eas-1"
+}
+  
