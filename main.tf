@@ -3,11 +3,11 @@
 ################################################################################
 
 resource "aws_vpc" "myVPC" {
-  cidr_block                       = var.cidr
+  cidr_block                       = var.cidr_block
   enable_dns_hostnames             = var.enable_dns_hostnames
   enable_dns_support               = var.enable_dns_support
   tags = {
-    Name = var.vpc_name
+    Name = var.myVpc_tag
   }
 }
 
@@ -15,7 +15,7 @@ resource "aws_vpc" "myVPC" {
 # Internet Gateway
 ###############################################################################
 
-resource "aws_internet_gateway" "myIGW" {
+resource "aws_internet_gateway" "igw" {
 
   vpc_id = aws_vpc.myVPC.id
   tags = {
@@ -34,7 +34,7 @@ resource "aws_subnet" "public_subnet_1" {
   map_public_ip_on_launch         = var.map_public_ip_on_launch
 
   tags = {
-   Name = var.public_subnet_tag_1
+   Name = var.public_subnet_1_tag
   }
 }
 resource "aws_subnet" "public_subnet_2" {
@@ -44,7 +44,7 @@ resource "aws_subnet" "public_subnet_2" {
   map_public_ip_on_launch         = var.map_public_ip_on_launch
 
   tags = {
-   Name = var.public_subnet_tag_2
+   Name = var.public_subnet_2_tag
   }
 }
 
@@ -59,7 +59,7 @@ resource "aws_subnet" "database_subnet_1" {
   map_public_ip_on_launch         = false
 
   tags = {
-    Name = var.database_subnet_tag_1
+    Name = var.database_subnet_1_tag
   }
 }
 resource "aws_subnet" "database_subnet_2" {
@@ -69,7 +69,7 @@ resource "aws_subnet" "database_subnet_2" {
   map_public_ip_on_launch         = false
 
   tags = {
-    Name = var.database_subnet_tag_2
+    Name = var.database_subnet_2_tag
   }
 }
 
@@ -85,8 +85,8 @@ resource "aws_route_table" "public_route_table" {
 }
 resource "aws_route" "public_internet_gateway" {
   route_table_id         = aws_route_table.public_route_table.id
-  destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = aws_internet_gateway.myIGW.id
+  destination_cidr_block = "[0.0.0.0/0]"
+  gateway_id             = aws_internet_gateway.igw.id
 }
 
 ################################################################################
