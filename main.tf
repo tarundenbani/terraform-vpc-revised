@@ -29,7 +29,7 @@ resource "aws_internet_gateway" "igw" {
 
 resource "aws_subnet" "public_subnet_1" {
   vpc_id                          = aws_vpc.myVPC.id
-  cidr_block                      = var.public_subnets_cidr_1
+  cidr_block                      = var.public_subnet_cidr_1
   availability_zone               = data.aws_availability_zones.available_1.names[0]
   map_public_ip_on_launch         = var.map_public_ip_on_launch
 
@@ -39,7 +39,7 @@ resource "aws_subnet" "public_subnet_1" {
 }
 resource "aws_subnet" "public_subnet_2" {
   vpc_id                          = aws_vpc.myVPC.id
-  cidr_block                      = var.public_subnets_cidr_2
+  cidr_block                      = var.public_subnet_cidr_2
   availability_zone               = data.aws_availability_zones.available_1.names[1]
   map_public_ip_on_launch         = var.map_public_ip_on_launch
 
@@ -54,7 +54,7 @@ resource "aws_subnet" "public_subnet_2" {
 
 resource "aws_subnet" "database_subnet_1" {
   vpc_id                          = aws_vpc.myVPC.id
-  cidr_block                      = var.database_subnets_cidr_1
+  cidr_block                      = var.database_subnet_cidr_1
   availability_zone               = data.aws_availability_zones.available_1.names[0]
   map_public_ip_on_launch         = false
 
@@ -64,7 +64,7 @@ resource "aws_subnet" "database_subnet_1" {
 }
 resource "aws_subnet" "database_subnet_2" {
   vpc_id                          = aws_vpc.myVPC.id
-  cidr_block                      = var.database_subnets_cidr_2
+  cidr_block                      = var.database_subnet_cidr_2
   availability_zone               = data.aws_availability_zones.available_1.names[1]
   map_public_ip_on_launch         = false
 
